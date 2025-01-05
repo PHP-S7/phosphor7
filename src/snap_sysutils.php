@@ -7,7 +7,8 @@
 
 //---------------------------------------------------------------------------
 function SysGetTick() {
-  return (int)(microtime(true) / 1000.0);
+	// Returns it in seconds as float with micosecond precision. We need ms here to compare to timeout ms. So multiply by 1000.
+  	return (int)(microtime(true) * 1000.0);
 }
 //---------------------------------------------------------------------------
 function SysSleep($Delay_ms) {
